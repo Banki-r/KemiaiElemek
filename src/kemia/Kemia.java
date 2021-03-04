@@ -16,6 +16,20 @@ public class Kemia {
             elemek.add(new Elem(beolvasott.get(i)));
         }
         
+        //3as feladat
+        
+        System.out.println("Elemek száma: "+elemek.size());
+        
+        //4es feladat
+        
+        int okori=0;
+        for (int i = 0; i < elemek.size(); i++) {
+            if (elemek.get(i).getEv().equals("Ókor")) {
+                okori++;
+            }
+        }
+        System.out.println("Felfedezések száma az ókorban: "+okori);
+        
     }
     
 }
