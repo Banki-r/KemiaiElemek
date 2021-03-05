@@ -41,7 +41,20 @@ public class Kemia {
             }
         }
         System.out.println(hossz+" év volt a leghosszabb időszak két elem felfedezése között");
-        
+        //8as feladat
+        System.out.println("8. feladat: Statisztika");
+        int darab=0;
+        for (int j=i;j<elemek.size()-1;j++) {
+            if(elemek.get(j).getEv().equals(elemek.get(j+1).getEv())){
+                darab++;
+            }
+            else{
+                if(darab>=3){
+                    System.out.println("\t"+Integer.parseInt(elemek.get(j).getEv())+" "+ (darab+1)+" db");
+                }
+                darab=0;
+            }
+        }
         
         
     }
