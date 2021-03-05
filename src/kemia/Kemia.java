@@ -29,6 +29,20 @@ public class Kemia {
             }
         }
         System.out.println("Felfedezések száma az ókorban: "+okori);
+        //7es feladat
+        int i=0;
+        while(elemek.get(i).getEv().equals("Ókor")){
+            i++;
+        }
+        int hossz=0;
+        for (int j=i;j<elemek.size()-1;j++) {
+            if(hossz<Integer.parseInt(elemek.get(j+1).getEv())-Integer.parseInt(elemek.get(j).getEv())){
+                hossz=Integer.parseInt(elemek.get(j+1).getEv())-Integer.parseInt(elemek.get(j).getEv());
+            }
+        }
+        System.out.println(hossz+" év volt a leghosszabb időszak két elem felfedezése között");
+        
+        
         
     }
     
