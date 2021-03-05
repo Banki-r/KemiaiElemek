@@ -1,6 +1,8 @@
 package kemia;
 // <>
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -28,6 +30,36 @@ public class Kemia {
                 okori++;
             }
         }
+        
+        //5. feladat
+        boolean jo;
+        String vegyjel;
+        do {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            System.out.print("5. feladat: Kérek egy vegyjelet: ");
+            vegyjel = br.readLine();
+            jo = (vegyjel.length() == 1 && Character.isLetter(vegyjel.charAt(0))) || (vegyjel.length() == 2 && Character.isLetter(vegyjel.charAt(0)) && Character.isLetter(vegyjel.charAt(1)));
+        } while (!jo);
+        
+        
+        //6. feladat
+        System.out.println("6. feladat: Keresés");
+        int k = 0;
+        while(k < elemek.size() && !vegyjel.equalsIgnoreCase(elemek.get(k).getVjel())) {
+            k++;
+        }
+        if (k < elemek.size()) {
+            Elem valasztottElem = elemek.get(k);
+            System.out.println("Az elem vegyjele: "+valasztottElem.getVjel());
+            System.out.println("Az elem neve: "+valasztottElem.getNev());
+            System.out.println("Rendszáma: "+valasztottElem.getRszam());
+            System.out.println("Felfedezés éve: "+valasztottElem.getEv());
+            System.out.println("Felfedező: "+valasztottElem.getFelfedezo());
+        }
+        else {
+            System.out.println("Nincs ilyen elem az adatforrásban!");
+        }
+        
         System.out.println("Felfedezések száma az ókorban: "+okori);
         //7es feladat
         int i=0;
